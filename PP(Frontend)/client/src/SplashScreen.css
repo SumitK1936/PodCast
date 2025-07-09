@@ -1,0 +1,106 @@
+/* src/components/SplashScreen.css */
+
+.splash-screen {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #121212;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeOut 1s ease-in-out 2s forwards;
+  overflow: hidden;
+}
+
+/* Glowing blur background */
+.glow-bg {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #ff00cc, #3333ff);
+  filter: blur(100px);
+  opacity: 0.4;
+  animation: floatGlow 6s infinite ease-in-out;
+  z-index: 1;
+}
+
+/* Logo with pulsing effect */
+.logo {
+  width: 240px;
+  z-index: 2;
+  animation: pulse 1.8s infinite ease-in-out, popIn 1.2s ease-out;
+}
+
+/* Title text */
+.title {
+  margin-top: 20px;
+  color: #fff;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  z-index: 2;
+  animation: slideUp 1.5s ease-in-out;
+}
+
+/* KEYFRAMES */
+
+@keyframes popIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* Pulsing animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.07);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Floating glow background */
+@keyframes floatGlow {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-20px, 20px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}

@@ -1,0 +1,243 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.light {
+  --text-color: #111;
+  --muted-color: #444;
+  --bg-color: #f2f2f2;
+  --card-bg: #fff;
+}
+
+body.dark {
+  --text-color: #fff;
+  --muted-color: #ccc;
+  --bg-color: #1e1e2f;
+  --card-bg: #2d2d4d;
+}
+
+
+
+.app-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: var(--text-color);
+  margin: 0;
+}
+
+header p {
+  color: var(--muted-color);
+  font-size: 1.1rem;
+}
+
+.podcast-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.podcast-card {
+  background-color: var(--card-bg);
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s;
+}
+
+
+.podcast-card:hover {
+  transform: scale(1.08); /* smooth zoom on hover */
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.podcast-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.podcast-card h2 {
+  color: var(--text-color);
+}
+
+.podcast-card p {
+  color: var(--muted-color);
+}
+
+
+audio {
+  width: 100%;
+  margin-top: 10px;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 40px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+.theme-toggle {
+  margin-top: 1rem;
+  background-color: transparent;
+  color: inherit;
+  border: 2px solid currentColor;
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.theme-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.like-btn {
+  margin-top: 12px;
+  padding: 8px 18px;
+  font-size: 1rem;
+  border-radius: 24px;
+  background: transparent;
+  border: 2px solid var(--text-color);
+  color: var(--text-color);
+  cursor: pointer;
+  transition: background 0.25s, color 0.25s;
+}
+
+.like-btn:hover {
+  background: var(--text-color);
+  color: var(--bg-color);
+}
+
+.toggle-liked-btn {
+  margin-bottom: 1rem;
+  padding: 8px 16px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.toggle-liked-btn:hover {
+  background-color: #e60000;
+}
+
+.auth-wrapper {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-card {
+  position: relative;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  padding: 2rem 2.5rem;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  color: white;
+  animation: fadeInUp 1s ease;
+}
+
+.auth-card input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: none;
+  background: #1e293b;
+  color: white;
+}
+
+.auth-card button {
+  margin-top: 16px;
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background: #3b82f6;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.auth-card button:hover {
+  background: #2563eb;
+}
+
+.auth-title {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.auth-error {
+  background: #dc2626;
+  color: white;
+  padding: 8px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.tooltip-container {
+position: relative;
+display: inline-block;
+}
+
+.tooltip-text {
+visibility: hidden;
+background-color: #111;
+color: #fff;
+padding: 6px 10px;
+border-radius: 6px;
+position: absolute;
+z-index: 100;
+top: 120%;
+right: 50%;
+transform: translateX(50%);
+opacity: 0;
+transition: opacity 0.3s ease;
+font-size: 0.8rem;
+white-space: nowrap;
+}
+
+.tooltip-container:hover .tooltip-text {
+visibility: visible;
+opacity: 1;
+}

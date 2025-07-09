@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "title": "Welcome to PodWorld",
+    "description": "The journey begins! In this episode, we introduce what to expect from this podcast.",
+    "audio": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+    "image": "https://i.imgur.com/8Km9tLL.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Tech & Trends",
+    "description": "We dive into current tech trends and innovations shaping the world.",
+    "audio": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
+    "image": "https://i.imgur.com/tGbaZCY.jpg"
+  }
+]
